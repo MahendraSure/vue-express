@@ -10,15 +10,19 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/status', (req, res) => {
-  res.send({
-    message: 'hello world!'
-  })
+    res.send({
+        message: 'hello world!'
+    })
 })
 
 app.post('/register', (req, res) => {
-  res.send({
-    message: `Howdy ${req.body.email}! Your user was registered!`
-  })
+    res.send({
+        message: `Howdy ${req.body.email}! Your user was registered!`
+    })
+})
+
+app.post('/login', (req, res) => {
+    res.status(200).send({ message: `Hi! ${req.body.userName}, Welcome back to VUE-Express` })
 })
 
 app.listen(process.env.PORT || 8081)
